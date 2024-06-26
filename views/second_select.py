@@ -14,11 +14,11 @@ def display_page2():
             st.session_state.step = 3
             st.rerun()
         if st.button('치아손상'):
-            st.session_state.step = 4
+            st.session_state.step = 5
             st.rerun()
     with col3:
         if st.button('복통'):
-            st.session_state.step = 5
+            st.session_state.step = 4
             st.rerun()
         if st.button('심정지'):
             st.session_state.step = 6

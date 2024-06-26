@@ -13,20 +13,18 @@ def display_page1():
     
     col1,col2,col3 = st.columns([1,1,1])
     with col2:
-        col1,col2,col3 = st.columns([1,5.5,1.5])
-        with col2:
-            if st.button('응급진료 시작하기'):
-                st.session_state.step = 2
-                st.rerun()
+        if st.button('응급진료 시작하기'):
+            st.session_state.step = 2
+            st.rerun()
                 
-        st.markdown(
-        """
-        <style>
+st.markdown(
+"""
+<style>
 
-        .st-emotion-cache-uwy95n{
-            width : 100%;
-        }
-        </style>
-        """,
-            unsafe_allow_html=True
-        )
+.st-emotion-cache-uwy95n{
+    width : 100%;
+}
+</style>
+""",
+    unsafe_allow_html=True
+)

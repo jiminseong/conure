@@ -2,6 +2,12 @@ import streamlit as st
 import base64
 
 def display_page5():
+    with open("./assets/logo.svg", "r") as f:
+        svg_content = f.read()
+
+    st.markdown(
+        f'<div style="padding: 1em; margin-left: 10%; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+    )
     st.title("치아 구조도 선택")
     st.markdown("아픈 부위를 선택해주세요:")
 
@@ -119,6 +125,3 @@ def display_page5():
     else:
         st.markdown('선택된 치아: 없음')
 
-# 앱 실행 부분
-if __name__ == "__main__":
-    display_page5()

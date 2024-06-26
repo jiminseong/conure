@@ -13,4 +13,5 @@ def initialize_session_state():
     if 'cpr_step' not in st.session_state:
         st.session_state.cpr_step = 0
         
-    
+    if 'second' not in st.session_state:
+        st.session_state.second = 0
