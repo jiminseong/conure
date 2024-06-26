@@ -8,4 +8,4 @@ def display_page1():
     st.markdown(
         f'<div style="padding: 1em; margin-left: 10%; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
-    
+    st.write("첫번째 페이지")
