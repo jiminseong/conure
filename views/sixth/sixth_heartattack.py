@@ -1,9 +1,7 @@
 import streamlit as st
 
 
-def display_page1():
-
-    
+def display_page6():
     with open("./assets/logo.svg", "r") as f:
         svg_content = f.read()
 
@@ -11,15 +9,17 @@ def display_page1():
         f'<div style="padding: 1em; margin-left: 10%; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
     
-    col1,col2,col3 = st.columns([1,1,1])
+    col1,col2,col3 = st.columns([1.5,2,1])
     with col2:
-        col1,col2,col3 = st.columns([1,5.5,1.5])
-        with col2:
-            if st.button('응급진료 시작하기'):
-                st.session_state.step = 2
+        st.subheader("119에 신고하셨나요?")
+        _,center,_ = st.columns([1,5,1])
+        with center:
+            if st.button('네 신고했습니다!'):
+                st.session_state.step = 6.2
                 st.rerun()
-                
-        st.markdown(
+        
+
+    st.markdown(
         """
         <style>
 
