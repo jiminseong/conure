@@ -1,4 +1,3 @@
-
 import streamlit as st
 from utils.session_state import initialize_session_state
 from utils.styles import apply_styles
@@ -18,6 +17,8 @@ from views.sixth.cpr.sixth_eighth_heartattack import display_page6_8
 from views.sixth.cpr.sixth_nineth_heartattack import display_page6_9
 from views.sixth.cpr.sixth_tenth_heartattack import display_page6_10
 
+from views.sixth_heartattack import display_page6
+from views.fifth_second_toothdamage import display_page5_2
 
 # 세션 상태 초기화
 initialize_session_state()
@@ -25,22 +26,20 @@ initialize_session_state()
 # 전역 스타일 설정
 apply_styles()
 
-# 각페이지 렌더링하는 step
+# 각 페이지 렌더링하는 step
 if st.session_state.step == 1:
     display_page1()
-    
 elif st.session_state.step == 2:
     display_page2()
     
 elif st.session_state.step == 3: 
     display_page3()
-    
 elif st.session_state.step == 4:
     display_page4()
-
 elif st.session_state.step == 5:
     display_page5()
-
+elif st.session_state.step == 52:
+    display_page5_2()
 elif st.session_state.step == 6:
     display_page6()
     
@@ -70,3 +69,4 @@ elif st.session_state.step == 6.9:
 
 elif st.session_state.step == 6.10:
     display_page6_10()
+
