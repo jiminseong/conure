@@ -15,6 +15,7 @@ from views.sixth.cpr.sixth_sixth_heartattack import display_page6_6
 from views.sixth.cpr.sixth_seventh_heartattack import display_page6_7
 from views.sixth.cpr.sixth_eighth_heartattack import display_page6_8
 from views.sixth.cpr.sixth_nineth_heartattack import display_page6_9
+from views.seventh.seventh_medicalinfo_page import display_page7
 from views.fifth_second_toothdamage import display_page5_2
 
 # 세션 상태 초기화
@@ -64,3 +65,5 @@ elif st.session_state.step == 6.8:
 elif st.session_state.step == 6.9:
     display_page6_9()
 
+elif st.session_state.step == 7:
+    display_page7()

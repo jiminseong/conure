@@ -16,7 +16,9 @@ def display_page1():
         if st.button('응급진료 시작하기'):
             st.session_state.step = 2
             st.rerun()
-                
+        if st.button('오늘의 의료 지식 배우기'):
+            st.session_state.step = 7
+            st.rerun()
 st.markdown(
 """
 <style>
