@@ -5,7 +5,7 @@ def display_page2():
         svg_content = f.read()
 
     st.markdown(
-        f'<div style="padding: 1em; margin-left: 10%; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+       f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
 
     col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
@@ -26,14 +26,14 @@ def display_page2():
     
 
     st.markdown(
-        """
-        <style>
+    """
+    <style>
 
-        .st-emotion-cache-uwy95n{
-            width : 100%;
-        }
-        </style>
-        """,
+    .st-emotion-cache-7ym5gk{
+        width : 100%;
+    }
+    </style>
+    """,
             unsafe_allow_html=True
         )
 

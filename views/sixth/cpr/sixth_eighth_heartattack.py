@@ -1,11 +1,12 @@
 import streamlit as st
 
 def display_page6_8():
+
     with open("././assets/logo.svg", "r") as f:
         svg_content = f.read()
 
     st.markdown(
-        f'<div style="padding: 1em; margin-left: 10%; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+        f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
     _,center,_ = st.columns([1,2,1])
     with center:
@@ -23,7 +24,7 @@ def display_page6_8():
     .st-emotion-cache-98upzg {
         color : red;
     }
-    .st-emotion-cache-uwy95n{
+    .st-emotion-cache-7ym5gk{
         width : 100%;
     }
     </style>

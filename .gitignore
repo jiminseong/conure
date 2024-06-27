@@ -5,6 +5,7 @@ ymc
 *.toml
 
 # Ignore all __pycache__ directories in the repository
+*.pyc
 __pycache__/
 **/__pycache__/
 **/**/__pycache__/

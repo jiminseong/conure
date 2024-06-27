@@ -23,7 +23,7 @@ def display_page6_9():
         svg_content = f.read()
 
     st.markdown(
-        f'<div style="padding: 1em; margin-left: 10%; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+       f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
     
     _, center, _ = st.columns([1, 2, 1])
@@ -55,8 +55,8 @@ def display_page6_9():
         .st-emotion-cache-n6b53v>.p {
             color: red;
         }
-        .st-emotion-cache-uwy95n {
-            width: 100%;
+        .st-emotion-cache-7ym5gk{
+        width : 100%;
         }
         </style>
         """,
