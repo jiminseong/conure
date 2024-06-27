@@ -5,7 +5,7 @@ def display_page2():
         svg_content = f.read()
 
     st.markdown(
-       f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+        f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
 
     col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
@@ -16,6 +16,9 @@ def display_page2():
         if st.button('치아손상'):
             st.session_state.step = 5
             st.rerun()
+        if st.button('골절'):
+            st.session_state.step=7
+            st.rerun()
     with col3:
         if st.button('복통'):
             st.session_state.step = 4
@@ -23,7 +26,10 @@ def display_page2():
         if st.button('심정지'):
             st.session_state.step = 6
             st.rerun()
-    
+        if st.button('열상'):
+            st.session_state.step = 8
+            st.rerun()
+        
 
     st.markdown(
     """

@@ -31,32 +31,6 @@ def request_chat_completion(data):
     result = "예시용 문자 데이터"
     return result
 
-# def request_chat_completion(
-#     prompt, system_role="복통 환자를 진료하는 간호사", model="gpt-4o", stream=True
-# ):
-#     messages = [
-#         {"role": "system", "content": system_role},
-#         {"role": "user", "content": prompt},
-#     ]
-
-#     chat_completion = client.chat.completions.create(
-#         model=model, messages=messages, stream=stream
-#     )
-    
-#     # result = chat_completion.choices[0].message.content
-#     result = "예시용문자"
-#     return result
-
-# def print_streaming_response(response):
-#     message = ""
-#     for chunk in response:
-#         delta = chunk.choices[0]["delta"]
-#         if "content" in delta:
-#             message += delta["content"]
-#         else:
-#             break
-#     return message
-
 def display_page4():
     with open("./assets/logo.svg", "r") as f:
         svg_content = f.read()

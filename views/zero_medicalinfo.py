@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-def display_page7():
+def display_page0():
     with open("./assets/logo.svg", "r") as f:
         svg_content = f.read()
     st.markdown(
