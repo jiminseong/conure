@@ -8,7 +8,9 @@ from views.first_home import display_page1
 from views.zero_medicalinfo import display_page0
 from views.fourth_colic import display_page4
 from views.second_select import display_page2
-from views.third_trauma import display_page3
+
+from views.third.third_trauma import display_page3
+from views.third.third_second_trauma import display_page3_2
 
 from views.fourth_colic import display_page4
 from views.fourth_second_colic import display_page4_2
@@ -62,6 +64,9 @@ elif st.session_state.step == 2:
 
 elif st.session_state.step == 3: 
     display_page3()
+    
+elif st.session_state.step == 3.2:
+    display_page3_2()
 
 elif st.session_state.step == 4:
     display_page4()

@@ -21,3 +21,6 @@ def initialize_session_state():
         
     if 'colic_result' not in st.session_state:
         st.session_state.colic_result = ""
+        
+    if 'uploaded_file' not in st.session_state:
+        st.session_state.uploaded_file = []

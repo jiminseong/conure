@@ -11,6 +11,9 @@ def apply_styles():
         .st-emotion-cache-7oyfbm{
             width : 100%;
         }
+        .st-emotion-cache-17h7n91{
+            width : 100%;
+        }
         </style>
         """,
         unsafe_allow_html=True

@@ -17,7 +17,7 @@ def display_page1():
             st.session_state.step = 2
             st.rerun()
         if st.button('오늘의 의료 지식 배우기'):
-            st.session_state.step = 7
+            st.session_state.step = 0
             st.rerun()
         st.link_button("카톡으로 의료 질문하기", "http://pf.kakao.com/_tCjpG")
             
@@ -30,6 +30,9 @@ def display_page1():
             width : 100%;
         }
         .st-emotion-cache-7ym5gk{
+            width : 100%;
+        }
+        .st-emotion-cache-yvd50o{
             width : 100%;
         }
         </style>
