@@ -52,7 +52,7 @@ def display_page3():
     st.write("외상으로 생긴 상처 부위 사진 파일을 업로드하세요 (최대 4장까지)")
     st.markdown('</div>', unsafe_allow_html=True)
     st.write("상처 부위가 잘보이는 사진을 사용 시 더 빠르게 정확한 응급처치 방법을 볼 수 있습니다.")
-    uploaded_files = st.file_uploader("'Browse files'를 눌러 사진 업로드", type=["jpg", "jpeg", "png"], accept_multiple_files=True, key="third_trauma_upload")
+    uploaded_files = st.file_uploader("'Browse files'를 눌러 사진 업로드", type=["jpg", "jpeg", "png"], accept_multiple_files=True, key="1")
     
     if uploaded_files:
         if len(uploaded_files) > 4:

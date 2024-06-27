@@ -79,10 +79,13 @@ def display_result(image_files):
         st.write(result)
         st.session_state.doctor_consulted = True
     
-    if st.button('주변 가까운 약국 보기'):
-            st.session_state.button_clicked = True
+    # if st.button('주변 가까운 약국 보기'):
+    #         st.session_state.button_clicked = True
 
     # 버튼이 클릭된 경우 지도 표시
+    if st.button('주변 가까운 약국 보기'):
+        st.session_state.button_clicked = not st.session_state.button_clicked
+    
     if st.session_state.button_clicked:
         # 가천대학교 역의 위도와 경도
         latitude = 37.448278
