@@ -1,7 +1,10 @@
 import streamlit as st
+
 from utils.session_state import initialize_session_state
 from utils.styles import apply_styles
+from views.fifth_toothdamage import display_page5
 from views.first_home import display_page1
+from views.fourth_colic import display_page4
 from views.second_select import display_page2
 from views.third_trauma import display_page3
 from views.fourth_colic import display_page4

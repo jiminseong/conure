@@ -8,5 +8,5 @@ def display_page3():
     st.markdown(
        f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
-    
+
     st.write("세번째 페이지")

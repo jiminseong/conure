@@ -1,13 +1,18 @@
-# .venv 디렉토리와 그 하위 파일들 무시
-.venv/
-.venv/*
+# venv 디렉토리와 그 하위 파일들 무시
+venv/
+venv/*
 ymc
 *.toml
 
 # Ignore all __pycache__ directories in the repository
 *.pyc
 __pycache__/
+__pycache__/*
 **/__pycache__/
 **/**/__pycache__/
 **/**/**__pycache__/
 **/**/**/**__pycache__/
+*.pyc
+
+# ignore jupyter 
+*.ipynb
