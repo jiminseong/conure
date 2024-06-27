@@ -15,3 +15,6 @@ def initialize_session_state():
         
     if 'second' not in st.session_state:
         st.session_state.second = 0
+        
+    if 'colic_result' not in st.session_state:
+        st.session_state.colic_result = ""

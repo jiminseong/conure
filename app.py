@@ -8,6 +8,7 @@ from views.fourth_colic import display_page4
 from views.second_select import display_page2
 from views.third_trauma import display_page3
 from views.fourth_colic import display_page4
+from views.fourth_second_colic import display_page4_2
 from views.fifth_toothdamage import display_page5
 from views.sixth.sixth_heartattack import display_page6
 from views.sixth.sixth_second_heartattack import display_page6_2
@@ -37,6 +38,10 @@ elif st.session_state.step == 3:
     display_page3()
 elif st.session_state.step == 4:
     display_page4()
+    
+elif st.session_state.step == 4.2:
+    display_page4_2()
+    
 elif st.session_state.step == 5:
     display_page5()
 elif st.session_state.step == 52:
