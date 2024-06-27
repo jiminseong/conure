@@ -2,12 +2,9 @@ import os
 from datetime import date
 
 import streamlit as st
-from openai import OpenAI
+from common import print_streaming_response, request_chat_completion
 
 os.environ["OPENAI_API_KEY"] = st.secrets["API_KEY"]
-client = OpenAI(
-    api_key=os.environ.get("OPENAI_API_KEY"),
-)
 
 
 def display_page4():
@@ -22,7 +19,7 @@ def display_page4():
     st.write("네번째 페이지")
 
 
-type_emoji_gender = {"남자": "🚹", "여자": "🚺"}
+gender_type = {"남자", "여자"}
 example_male = {
     "name": "홍길동",
     "height": "174",
@@ -37,6 +34,20 @@ example_female = {
     "weight": "52",
     "born": date(1980, 7, 28),
 }
+prompt_template = """
+환자의 이름은 {Name}
+배의 {symptom_location}쪽이 아픕니다.
+먹은 음식은 {food} 입니다.
+이 경우에 복통을 완화하는 방법을 알려주세요.
+먹으면 좋은 음식과 약을 추천해주세요
+___
+키: {height}
+성별: {gender}
+몸무게: {weigh}
+생년월일: {birth}
+___
+""".strip()
+
 col1, col2, col3 = st.columns([1, 2, 1])
 
 with col2:
@@ -50,7 +61,7 @@ with col2:
         example_data = example_female
     else:
         example_data = {
-            "name": "아무개",
+            "name": "",
             "height": 50,
             "types": [],
             "weight": 1,
@@ -62,31 +73,40 @@ with col2:
         col1, col2 = st.columns(2)
         with col1:
             name = st.text_input(
-                label="이름",
-                value=example_data["name"],
+                label="이름", value=example_data["name"], placeholder="아무개"
             )
             height = st.number_input(
-                "키", 50.0, 231.0, value=float(example_data["height"])
+                "키", 50.0, 231.0, value=float(example_data["height"]), placeholder=50
             )
         with col2:
             types = st.multiselect(
                 label="성별",
-                options=list(type_emoji_gender.keys()),
+                options=list(gender_type),
                 default=example_data["types"],
                 max_selections=1,
             )
             weight = st.number_input(
-                "몸무게", 1.0, 178.0, value=float(example_data["weight"])
+                "몸무게",
+                1.0,
+                178.0,
+                placeholder="1",
+                value=float(example_data["weight"]),
             )
         born = st.date_input("생년월일", value=example_data["born"])
         st.markdown("**의심되는 음식을 최대 3개 작성해주세요**")
         col1, col2, col3 = st.columns(3)
         with col1:
-            food_1 = st.text_input(label="음식1")
+            food_1 = st.text_input(
+                label="음식1", label_visibility="collapsed", placeholder="음식 1"
+            )
         with col2:
-            food_2 = st.text_input(label="음식2")
+            food_2 = st.text_input(
+                label="음식2", label_visibility="collapsed", placeholder="음식 2"
+            )
         with col3:
-            food_3 = st.text_input(label="음식3")
+            food_3 = st.text_input(
+                label="음식3", label_visibility="collapsed", placeholder="음식 3"
+            )
         symptom = st.selectbox(
             "어느 부위가 아픈가요?",
             ("", "우상", "좌상", "우하", "좌하", "복부 전체", "옆구리", "배꼽 주위"),
@@ -101,4 +121,21 @@ with col2:
             elif len(symptom) == 0:
                 st.error("부위를 선택해주세요.")
             else:
+                food_list = [food_1, food_2, food_3]
+                food_list = [x for x in food_list if x]
+                prompt_template.format(
+                    Name=name,
+                    height=height,
+                    gender=types,
+                    weigh=weight,
+                    birth=born,
+                    food=food_list,
+                    symptom_location=symptom,
+                )
+                system_role = "당신은 간호사입니다."
+                with st.spinner("진단 중입니다."):
+                    response = request_chat_completion(
+                        prompt=prompt_template, system_role=system_role, stream=True
+                    )
+                print_streaming_response(response)
                 st.success("진단을 시작하겠습니다")
