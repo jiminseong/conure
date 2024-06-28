@@ -4,18 +4,18 @@ from scipy.io.wavfile import write
 import numpy as np
 import os
 
-# 비프음 파일 생성
-# def create_beep_wav():
-#     sample_rate = 44100  # 샘플링 주파수
-#     duration = 0.5  # 비프음 길이
-#     frequency = 1000  # 비프음 주파수
+#비프음 파일 생성
+def create_beep_wav():
+    sample_rate = 44100  # 샘플링 주파수
+    duration = 0.5  # 비프음 길이
+    frequency = 1000  # 비프음 주파수
 
-#     t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
-#     wave = 0.5 * np.sin(2 * np.pi * frequency * t)
+    t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
+    wave = 0.5 * np.sin(2 * np.pi * frequency * t)
 
-#     write("beep.mp3", sample_rate, wave.astype(np.float32))
+    write("beep.mp3", sample_rate, wave.astype(np.float32))
 
-# create_beep_wav()
+create_beep_wav()
 
 def display_page6_9():
     # SVG 로고 표시
@@ -23,7 +23,7 @@ def display_page6_9():
         svg_content = f.read()
 
     st.markdown(
-       f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+        f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
     
     _, center, _ = st.columns([1, 2, 1])
