@@ -20,6 +20,9 @@ def apply_styles():
         .st-emotion-cache-otc82o{
             width : 100%;
         }
+        .st-emotion-cache-1mcbg9u{
+            width: 100%;
+        }
         </style>
         """,
         unsafe_allow_html=True
