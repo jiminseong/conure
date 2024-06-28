@@ -1,12 +1,45 @@
 import streamlit as st
 
-
 def display_page2():
     with open("./assets/logo.svg", "r") as f:
         svg_content = f.read()
 
     st.markdown(
-        f'<div style="padding: 1em; margin-left: 10%; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+        f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
-    
-    st.write("두번째 페이지")
+
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+    with col2:
+        if st.button('외상'):
+            st.session_state.step = 3
+            st.rerun()
+        if st.button('치아손상'):
+            st.session_state.step = 5
+            st.rerun()
+        if st.button('골절'):
+            st.session_state.step=7
+            st.rerun()
+    with col3:
+        if st.button('복통'):
+            st.session_state.step = 4
+            st.rerun()
+        if st.button('의식불명'):
+            st.session_state.step = 6
+            st.rerun()
+        if st.button('온열질환'):
+            st.session_state.step = 8
+            st.rerun()
+        
+
+    st.markdown(
+    """
+    <style>
+
+    .st-emotion-cache-7ym5gk{
+        width : 100%;
+    }
+    </style>
+    """,
+            unsafe_allow_html=True
+        )
+
