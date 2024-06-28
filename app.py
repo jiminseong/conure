@@ -11,6 +11,7 @@ from views.second_select import display_page2
 
 from views.third.third_trauma import display_page3
 from views.third.third_second_trauma import display_page3_2
+from views.third.third_third_trauma import display_page3_3
 
 from views.fourth_colic import display_page4
 from views.fourth_second_colic import display_page4_2
@@ -27,6 +28,7 @@ from views.sixth.cpr.sixth_sixth_heartattack import display_page6_6
 from views.sixth.cpr.sixth_seventh_heartattack import display_page6_7
 from views.sixth.cpr.sixth_eighth_heartattack import display_page6_8
 from views.sixth.cpr.sixth_nineth_heartattack import display_page6_9
+from views.sixth.cpr.sixth_tenth_heartattack import display_page6_10
 
 from views.seventh.seventh_fracture import display_page7
 from views.seventh.seventh_second_fracture import display_page7_2
@@ -42,6 +44,7 @@ from views.seventh.seventh_eleventh_fracture import display_page7_11
 from views.seventh.seventh_twelveth_fracture import display_page7_12
 
 from views.eighth.eighth_heat import display_page8
+from views.eighth.eighth_second_heat import display_page8_2
 
 
 
@@ -67,6 +70,10 @@ elif st.session_state.step == 3:
     
 elif st.session_state.step == 3.2:
     display_page3_2()
+    
+
+elif st.session_state.step == 3.3:
+    display_page3_3()
 
 elif st.session_state.step == 4:
     display_page4()
@@ -107,7 +114,9 @@ elif st.session_state.step == 6.8:
 elif st.session_state.step == 6.9:
     display_page6_9()
 
-
+elif st.session_state.step == 6.10:
+    display_page6_10()
+    
 elif st.session_state.step==7:
     display_page7()
 
@@ -147,3 +156,6 @@ elif st.session_state.step==7.12:
 
 elif st.session_state.step == 8:
     display_page8()
+    
+elif st.session_state.step == 8.2:
+    display_page8_2()

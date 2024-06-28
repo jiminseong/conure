@@ -24,3 +24,16 @@ def initialize_session_state():
         
     if 'uploaded_file' not in st.session_state:
         st.session_state.uploaded_file = []
+        
+    if 'heat' not in st.session_state:
+        st.session_state.heat = []
+        
+    if 'heat_text' not in st.session_state:
+        st.session_state.heat_text = ""
+        
+    if 'heat_result' not in st.session_state:
+        st.session_state.heat_result = ""
+        
+    if 'trauma_input' not in st.session_state:
+        st.session_state.trauma_input = []
+        

@@ -1,8 +1,11 @@
 import streamlit as st
 import folium
+from streamlit_folium import st_folium
 
-def display_page6_3():
-        # 로고 표시
+
+def display_page3_3():
+    
+    # 로고 표시
     with open("./assets/logo.svg", "r") as f:
         svg_content = f.read()
         
@@ -60,4 +63,3 @@ st.markdown("""
             }
             </style>
     """, unsafe_allow_html=True)
-    

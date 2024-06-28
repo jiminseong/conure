@@ -16,7 +16,7 @@ def display_page1():
         if st.button('응급진료 시작하기'):
             st.session_state.step = 2
             st.rerun()
-        if st.button('오늘의 의료 지식 배우기'):
+        if st.button('오늘의 의료 지식'):
             st.session_state.step = 0
             st.rerun()
         st.link_button("카톡으로 의료 질문하기", "http://pf.kakao.com/_tCjpG")

@@ -5,7 +5,7 @@ def display_page6_4():
         svg_content = f.read()
 
     st.markdown(
-       f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+        f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
     
     _,center,_ = st.columns([1,2,1])
@@ -18,7 +18,7 @@ def display_page6_4():
                 st.rerun()
         with center:
             if st.button("의식이 있어요!"):
-                st.session_state.step = 6
+                st.session_state.step = 6.
                 st.rerun()
 
     st.markdown(

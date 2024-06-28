@@ -23,10 +23,10 @@ def display_page2():
         if st.button('복통'):
             st.session_state.step = 4
             st.rerun()
-        if st.button('심정지'):
+        if st.button('의식불명'):
             st.session_state.step = 6
             st.rerun()
-        if st.button('열상'):
+        if st.button('온열질환'):
             st.session_state.step = 8
             st.rerun()
         
