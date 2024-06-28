@@ -21,7 +21,6 @@ from views.fifth_second_toothdamage import display_page5_2
 
 from views.sixth.sixth_heartattack import display_page6
 from views.sixth.sixth_second_heartattack import display_page6_2
-from views.sixth.sixth_third_heartattack import display_page6_3
 from views.sixth.sixth_fourth_heartattack import display_page6_4
 from views.sixth.cpr.sixth_fifth_heartattack import display_page6_5
 from views.sixth.cpr.sixth_sixth_heartattack import display_page6_6
@@ -92,9 +91,6 @@ elif st.session_state.step == 6:
 
 elif st.session_state.step == 6.2:
     display_page6_2()
-
-elif st.session_state.step == 6.3:
-    display_page6_3()
 
 elif st.session_state.step == 6.4:
     display_page6_4()

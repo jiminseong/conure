@@ -4,9 +4,9 @@ import base64
 def display_page5():
     with open("./assets/logo.svg", "r") as f:
         svg_content = f.read()
-
+    
     st.markdown(
-       f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
+        f'<div style="display : flex; justify-content : center; margin-bottom:5%;" align="center">{svg_content}</div>', unsafe_allow_html=True
     )
     st.title("치아 구조도 선택")
     st.markdown("아픈 부위를 선택해주세요:")
@@ -23,8 +23,6 @@ def display_page5():
         '윗 잇몸', '아래 잇몸'
     ]
 
-    if 'selected_tooth' not in st.session_state:
-        st.session_state.selected_tooth = ""
 
     # 이미지 파일을 읽어 Base64 인코딩
     with open("./assets/teeth.jpg", "rb") as f:
@@ -106,13 +104,13 @@ def display_page5():
 
     # 이빨 선택 폼
     with st.form(key='tooth_form'):
-        tooth_number = st.text_input("선택한 치아 번호를 입력하세요:")
+        tooth_number = st.number_input("아픈 이빨 번호를 입력해주세요",  min_value=1, max_value=30, value=1, step=1,placeholder="숫자를 입력해주세요")
         submit = st.form_submit_button("이빨 선택")
 
     if submit:
-        if tooth_number.isdigit() and 1 <= int(tooth_number) <= 30:
-            st.session_state.selected_tooth = teeth_names[int(tooth_number) - 1]
-            st.markdown(f'선택된 치아: {int(tooth_number)}번 {st.session_state.selected_tooth}입니다. 맞으면 확인 버튼을 눌러주세요!')
+        if 1 <= tooth_number <= 30:
+            st.session_state.selected_tooth.append(teeth_names[tooth_number])
+            st.markdown(f'선택된 치아: {tooth_number}번 {teeth_names[tooth_number]}입니다. 맞으면 확인 버튼을 눌러주세요!')
         else:
             st.error("유효한 치아 번호를 입력하세요. (1-30)")
 

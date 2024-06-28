@@ -10,12 +10,8 @@ def display_page6_2():
     
     
     
-    _,col1,col2,_ = st.columns([1,2,2,1])
-    with col1:
-        if st.button('주변 AED 찾기'):
-            st.session_state.step = 6.3
-            st.rerun()
-    with col2:
+    _,center,_ = st.columns([1,2,1])
+    with center:
         if st.button('심폐소생술 따라하기'):
             st.session_state.step = 6.4
             st.rerun()

@@ -8,8 +8,11 @@ def initialize_session_state():
         st.session_state.cpr_step = 0  
 
     if 'selected_tooth' not in st.session_state:
-        st.session_state.selected_tooth = ""
-  
+        st.session_state.selected_tooth = []
+    
+    if 'tooth_result' not in st.session_state:
+        st.session_state.tooth_result = ""
+
     if 'selected_bone' not in st.session_state:
         st.session_state.selected_bone = ""
 

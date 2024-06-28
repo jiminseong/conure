@@ -1,7 +1,6 @@
-import os
 from datetime import date
 import streamlit as st
-from openai import OpenAI
+
 
 
 
